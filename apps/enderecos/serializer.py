@@ -1,3 +1,7 @@
+from .models import Endereco
 from rest_framework import serializers
 
-# TODO: import model and create serializer
+class EnderecoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Endereco
+        fields = '__all__'
