@@ -1,3 +1,7 @@
+from .models import Hospedagem
 from rest_framework import serializers
 
-# TODO: import model and create serializer
+class HospedagemSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hospedagem
+        fields = '__all__'
