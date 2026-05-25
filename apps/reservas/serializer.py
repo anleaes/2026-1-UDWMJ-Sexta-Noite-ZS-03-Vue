@@ -1,3 +1,7 @@
+from .models import Reserva
 from rest_framework import serializers
 
-# TODO: import model and create serializer
+class ReservaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Reserva
+        fields = '__all__'
