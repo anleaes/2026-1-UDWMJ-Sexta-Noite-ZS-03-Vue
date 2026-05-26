@@ -1,3 +1,7 @@
+from .models import Avaliacao
 from rest_framework import serializers
 
-# TODO: import model and create serializer
+class AvaliacaoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Avaliacao
+        fields = '__all__'
