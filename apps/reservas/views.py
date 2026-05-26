@@ -1,7 +1,11 @@
 from rest_framework import viewsets
-from .models import Reservas
-from .serializer import ReservasSerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from .models import Reserva
+from .serializer import ReservaSerializer
 
-class ReservasViewSet(viewsets.ModelViewSet):
-    queryset = Reservas.objects.all()
-    serializer_class = ReservasSerializer
+class ReservaViewSet(viewsets.ModelViewSet):
+    queryset = Reserva.objects.all()
+    serializer_class = ReservaSerializer
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
